@@ -25,9 +25,9 @@ public class ApiServerStart {
             serverResponse.put("message", message);
         }
     
-        public String getServerResponse(){
+        public HashMap<String, String> getServerResponse(){
             System.out.println(this.serverResponse);
-            return this.serverResponse.get("message");
+            return this.serverResponse;
         }
     }
 }
