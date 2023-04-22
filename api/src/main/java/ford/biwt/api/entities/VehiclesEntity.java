@@ -1,7 +1,6 @@
 package ford.biwt.api.entities;
 
-import java.security.Timestamp;
-import java.sql.Date;
+import java.time.Instant;
 import java.time.LocalDate;
 import java.util.UUID;
 
@@ -22,12 +21,15 @@ public class VehiclesEntity {
 
     @Id
     private UUID uuid;
-    private LocalDate created_at;
+    private Instant created_at;
     private String name;
+
+    // all the data shall be converted and sent to the database
+    // the UUID and LocalDate are specific types
 
     public VehiclesEntity( Vehicles data){
         this.uuid=UUID.randomUUID();
-        this.created_at=LocalDate.now();
+        this.created_at=Instant.now();
         this.name=data.name();
         System.out.println("Data : ");
         System.out.println(this.uuid);
